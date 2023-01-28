@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="topbar">
+            <h2>Calculator</h2>
+            <div class="historyy">
+            <i class="fa-solid fa-repeat" id="show"></i>
+            <span class="tool-tip">History</span>
+            </div>
+        </div>
+        <div class="last">
+            <p id="data" class=""></p>
+            <span class="dustbin"><i class="fa-solid fa-trash-can"></i></span>
+            <input type="text" placeholder="0" id="screen">
+        </div>
+        
+        <table>
+            <tr id="top">
+                <td>MC</td>
+                <td>MR</td>
+                <td>M+</td>
+                <td>M-</td>
+                <td>M^</td>
+            </tr>
+            <tr>
+                <td><button>%</button></td>
+                <td><button>CE</button></td>
+                <td><button>C</button></td>
+                <td><button id="delete"><i class="fa-solid fa-delete-left"></i></button></td>
+            </tr>
+            <tr>
+                <td><button>1/x</button></td>
+                <td><button>x2</button></td>
+                <td><button>x3</button></td>
+                <td> <button>÷</button></td>
+            </tr>
+            <tr>
+                <td><button>7</button></td>
+                <td><button>8</button></td>
+                <td><button>9</button></td>
+                <td><button>x</button></td>
+            </tr>
+            <tr>
+                <td><button>4</button></td>
+                <td><button>5</button></td>
+                <td><button>6</button></td>
+                <td><button>-</button></td>
+            </tr>
+            <tr>
+                <td><button>1</button></td>
+                <td><button>2</button></td>
+                <td><button>3</button></td>
+                <td><button>+</button></td>
+            </tr>
+            <tr>
+                <td><button>+/-</button></td>
+                <td><button>0</button></td>
+                <td><button>.</button></td>
+                <td><button id="equal">=</button></td>
+            </tr>
+        </table>
+        
+    </div>
+</body>
+<script>
+    const dat = document.getElementById('data');
+    const screen = document.getElementById('screen');
+    const buttons = document.querySelectorAll('button');
+    const recent = document.querySelector('.historyy');
+    const last = document.querySelector('.last');
+    const dustbin = document.querySelector('.dustbin');
+    let Histor = [];
+    let screenVle = "";
+    for( item of buttons ) {
+        item.addEventListener ('click', (e)=>{
+            buttonText = e.target.innerText;
+            Histor = buttonText;
+            
+            if(buttonText == 'x'){
+                buttonText = '*' ;
+                screenVle += buttonText;
+                screen.value = screenVle;
+            }
+            else if( buttonText == 'C'){
+                screenVle = "";
+                screen.value = screenVle;
+                Histor = screenVle +'\n';   
+            }
+            else if( buttonText == 'CE'){
+                screenVle = "";
+                screen.value = screenVle;    
+                Histor = "" +  '\n' ;     
+            }
+            else if( buttonText == '÷'){
+                buttonText = '/';
+                screenVle += buttonText;
+                screen.value = screenVle;   
+            }
+            else if (buttonText == '='){
+                screen.value = eval(screenVle);
+                Histor += screen.value + '\n' ;    
+            }
+            else if (buttonText == '+/-'){
+               screen.value = -Math.abs(screenVle);   
+            }
+            else if(buttonText == ""){
+                const screens = screenVle.slice(0, -1);
+                screen.value = screens;
+                screenVle = screen.value;
+            }
+            else{
+                screenVle += buttonText;
+                screen.value = screenVle;  
+            }
+            dat.innerText += Histor;
+        })
+        
+    }
+    window.setInterval(function() {
+  var da = document.getElementById('data');
+  da.scrollTop = da.scrollHeight;
+}, 100);
+    console.log(screenVle);
+
+    recent.addEventListener('click', function(){
+        last.classList.toggle('active');
+        last.classList.toggle('he');
+        console.log(last)
+
+    })
+    dustbin.addEventListener('click', function(){
+        dat.innerText = "";
+        console.log('hey')
+    });
+</script>
+</html>

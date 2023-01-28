@@ -1,0 +1,246 @@
+.container{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    flex-direction: column;
+    background-color: #202020;
+    padding: 20px;
+    color: white;
+    position: relative;
+    height: 660px;
+    
+}
+.he #screen{
+    height: 163px;
+}
+.topbar h2{
+    font-family: 'Roboto', sans-serif;
+    margin-left: 08px;
+    font-weight: 600px;
+    font-size: 23px;
+    overflow: visible;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.topbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+input{
+    width: 100%;
+    outline: none;
+    border: none;
+    text-align: right;
+    height: 90px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+    background-color: #202020;
+    color: white !important;
+    font-size: 40px;
+}
+input::placeholder{
+    color: white;
+}
+table{
+    width: 100%;
+    box-sizing: border-box;
+}
+#top{
+    color: #666;
+    font-size: 18px;
+    width: 80px;
+    display: flex;
+    gap: 20px;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+#data{
+    width: 100%;
+    height: 25px;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    color: rgba(255, 255, 255, 0.434);
+    text-align: right;
+    padding-right: 20px;
+    font-size: 24px;
+}
+.historyy{
+    display: inline-block;
+    position: relative;
+}
+.historyy:hover .tool-tip{
+    visibility: visible;
+}
+.tool-tip{
+    position: absolute;
+    visibility: hidden;
+    left: 50%;
+    bottom: 100%;
+    padding: 05px;
+    margin-left: -30px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    border-radius: 2px;
+    background-color:#313131;
+}
+#show{
+    color: white;
+    font-size: 24px;
+    transition: ease-in-out 0.5ms;
+}
+.active #data{
+    width: 100%;
+    height: 425px !important;
+    z-index: 1;
+    background-color:  	#303030 !important;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    line-height: 40px;
+    padding-left: -20px !important;
+    bottom: 0;
+    left: 0;
+    text-align: bottom;
+    box-sizing: border-box;
+    padding-right: 60px;
+    padding-top: 10px;
+    margin-bottom: -10px;
+    padding-bottom: 50px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+.dustbin{
+    position: absolute;
+    left: 92%;
+    bottom: 10%;
+    z-index: 5;
+    color: #666;
+    font-size: 20px;
+   
+    visibility: hidden;
+}
+.active .dustbin{
+    visibility: visible;
+}
+.dustbin:hover{
+    transition: ease-in-out  0.5s ;
+    color: white;
+    transform: rotate(180deg);
+}
+#show:hover{
+    transform: rotate(270deg);
+}
+button{
+    background-color: #313131;
+    border: none;
+    width: 90px;
+    box-sizing: border-box;
+    height: 60px;
+    border-radius: 2px;
+    color: white;
+    font-size: large;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+button:hover{
+    background-color: #817f7f9f;
+}
+#top td{
+    padding: 05px 18px;
+    border-radius: 4px;
+    display: block;
+    width: 100px;
+    
+}
+#top td:hover{
+    background-color: #817f7f9f;
+    color: white;
+}
+#equal{
+    background-color: rgba(135, 207, 235, 0.701);
+    color: rgba(0, 0, 0, 0.749);
+    font-size: 40px;
+}
+#equal:hover{
+    background-color: skyblue;
+    color: black;
+}
+#delete{
+    background-color: rgba(255, 0, 0, 0.547);
+}
+#delete:hover{
+    background-color: red;
+}
+
+
+
+
+/* Currency */
+.container-box{
+    display: flex;
+}
+
+.new-table button{
+    width: 130px;
+    border-radius: 06px;
+}
+.empty{
+    background-color: transparent;
+}
+.empty:hover{
+    background-color: transparent;
+}
+.container-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+}
+#sel2{
+    width: 200px;
+    background-color: #202020;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    text-align: left;
+    height: 60px;
+    margin-left: -160px;
+    justify-content: center;
+    
+}
+#from-input{
+    text-align: left;
+}
+#sel2 option{
+    margin-left: 10px;
+    color: white;
+    background-color: #202020;
+    font-family: 'Roboto', sans-serif;
+   
+}
+#sel2 option:hover{
+    color: white;
+    background-color: red;
+   
+}
+#sel2::-webkit-scrollbar{
+    width: 5px;
+}
+select::-webkit-scrollbar-thumb{
+    background-color: white;
+    height: 10px;
+    border-radius: 10px;
+}
+select::-webkit-scrollbar-track{
+    background-color: #202020;;
+}
